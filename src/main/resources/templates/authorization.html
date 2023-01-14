@@ -62,11 +62,11 @@
 				<!-- Rules start (Правила) -->
 		<section class="registration">
 			<div class="wrapper reg__wrap">
-				<form action="index">
+				<form th:action="@{/login}" th:object="${authRequest}" th:method="POST">
 					<p2 class="intro__subtitle">Логин:</p2><br>
-					<input class="input_text" type="text" placeholder="Введите логин"><br>
+					<input class="input_text" type="text" placeholder="Введите логин" th:field="*{login}"><br>
 					<p2 class="intro__subtitle">Пароль:</p2><br>
-					<input class="input_text" type="password" placeholder="Введите пароль"><br>
+					<input class="input_text" type="password" placeholder="Введите пароль" th:field="*{password}"><br>
 					<p2 class="intro__subtitle">
 						<a href="registration" class="header__link time-work link">У вас еще нет аккаунта?</a>
 					</p2><br><br>
