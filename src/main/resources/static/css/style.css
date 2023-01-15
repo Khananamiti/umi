@@ -988,6 +988,12 @@ body{
     text-decoration: underline;
 }
 
+.error {
+    color: #B91212;    
+    border: 1px solid red;
+    padding: 10px;
+}
+
 /*  Registration end (Регистрация) */
 
 
