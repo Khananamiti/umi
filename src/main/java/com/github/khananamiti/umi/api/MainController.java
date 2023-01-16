@@ -1,15 +1,20 @@
 package com.github.khananamiti.umi.api;
 
 import com.github.khananamiti.umi.api.dto.AuthRequest;
+import com.github.khananamiti.umi.service.ProductService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
+@RequiredArgsConstructor
 public class MainController {
+    private final ProductService productService;
 
-    @GetMapping
-    public String main() {
+    @GetMapping("/")
+    public String main(Model model) {
+        model.addAttribute("productGroups", productService.productGroups());
         return "index";
     }
 

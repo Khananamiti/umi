@@ -17,29 +17,29 @@
 					</a>
 				</div>
 				<div class="header__capshion">
-					<nav class="header__nav">					
+					<nav class="header__nav">
 						<ul class="header__list">
 							<li class="header__item">
 								<a href="shipping_payment" class="header__link">Доставка и оплата</a>
-							</li>					
+							</li>
 							<li class="header__item">
 								<a href="guarantee" class="header__link">Гарантия</a>
-							</li>					
+							</li>
 							<li class="header__item">
 								<a href="contacts" class="header__link">Контакты</a>
-							</li>					
+							</li>
 							<li class="header__item">
 								<a href="authorization" class="header__link">Личный кабинет</a>
 							</li>
 							<div class="contact">
 								<li class="telephone">
 									<a href="tel:+79083120707" class="header__link telephone">+7-908-312-07-07</a>
-								</li>		
-								<ul class="time-work">	
+								</li>
+								<ul class="time-work">
 									<li class="header__item3">
 										<a href="mailto:umiomsk55@gmail.com" class="header__link time-work">umiomsk55@gmail.com</a>
 									</li>
-								</ul>	
+								</ul>
 							</div>
 						</ul>
 					</nav>
@@ -57,7 +57,7 @@
 			<div class="wrapper">
 			</div>
 		</section>
-		<!-- Intro end (Вступление) -->		
+		<!-- Intro end (Вступление) -->
 
 				<!-- Rules start (Правила) -->
 		<section class="rules">
@@ -68,7 +68,7 @@
 				<div class="rules__cards">
 
 					<div class="rules__card">
-						<img src="./img/icon1.png" alt="Грузовик">											
+						<img src="./img/icon1.png" alt="Грузовик">
 						<h3 class="rules__card-circle-title">
 							Бесплатная доставка
 						</h3>
@@ -78,7 +78,7 @@
 					</div>
 
 					<div class="rules__card">
-						<img src="./img/icon2.png" width="100" alt="Гарантия">						
+						<img src="./img/icon2.png" width="100" alt="Гарантия">
 						<h3 class="rules__card-circle-title">
 							12 месяцев гарантии
 						</h3>
@@ -88,7 +88,7 @@
 					</div>
 
 					<div class="rules__card">
-						<img src="./img/icon3.png" width="100" alt="Сердце">							
+						<img src="./img/icon3.png" width="100" alt="Сердце">
 						<h3 class="rules__card-circle-title">
 							Подарки и конкурсы
 						</h3>
@@ -96,95 +96,28 @@
 							Дружелюбное обслуживание
 						</p>
 					</div>
-					
+
 				</div>
-			</div>			
+			</div>
 		</section>
 		<!-- Rules end (Правила) -->
 
 		<!--  Catalog start (Каталог товаров)-->
 		<section class="catalog" id="s5">
 			<div class="catalog__wrap">
-				<div class="catalog__cards">
-					<div class="catalog__card">
+				<div th:each="productGroup: ${productGroups}" class="catalog__cards">
+					<div th:each="product: ${productGroup}" th:attr="data-id=${product.id}" class="catalog__card">
 						<div class="catalog__card-pic">
-							<img src="./img/1t.jpg" alt="Аренда фотостудии" class="catalog__card-mini">
+							<img th:src="${product.imageSource}" th:alt="${product.imageName}" class="catalog__card-mini">
 							<a href="#!" class="halls__card-link"></a>
 						</div>
-						<h3 class="catalog__card-title">
-							Смартфон Xiaomi Redmi Note 10S 6/128 Gb Синий
+						<h3 class="catalog__card-title" th:text="${product.name}">
+							Имя продукта
 						</h3>
-						<p class="catalog__card-desc">
-							16990,00  руб.
+						<p class="catalog__card-desc" th:text="${product.price} + ' руб.'">
+							0 руб.
 						</p>
-						<button type="submit" class="search-form__submit2">Купить</button>	
-					</div>
-					<div class="catalog__card">
-						<div class="catalog__card-pic">
-							<img src="./img/2t.jpg" alt="Услуги фотографа" class="catalog__card-mini">
-							<a href="#!" class="halls__card-link"></a>
-						</div>
-						<h3 class="catalog__card-title">
-							Смартфон Xiaomi 11T Pro 12/256 Gb Серый
-						</h3>
-						<p class="catalog__card-desc">
-							39990,00  руб.
-						</p>
-						<button type="submit" class="search-form__submit2">Купить</button>	
-					</div>
-					<div class="catalog__card">
-						<div class="catalog__card-pic">
-							<img src="./img/3t.jpg" alt="Мероприятия" class="catalog__card-mini">
-							<a href="#!" class="halls__card-link"></a>
-						</div>
-						<h3 class="catalog__card-title">
-							Смартфон Xiaomi Redmi 10 4/128 Gb Pebble White
-						</h3>
-						<p class="catalog__card-desc">
-							14990,00  руб.
-						</p>
-						<button type="submit" class="search-form__submit2">Купить</button>	
-					</div>
-				</div>
-				<div class="catalog__cards">
-					<div class="catalog__card">
-						<div class="catalog__card-pic">
-							<img src="./img/4t.jpg" alt="Аренда фотостудии" class="catalog__card-mini">
-							<a href="#!" class="halls__card-link"></a>
-						</div>
-						<h3 class="catalog__card-title">
-							Смартфон Xiaomi Poco M4 Pro 5G 4/64 GB Синий
-						</h3>
-						<p class="catalog__card-desc">
-							13490,00  руб.
-						</p>
-						<button type="submit" class="search-form__submit2">Купить</button>	
-					</div>
-					<div class="catalog__card">
-						<div class="catalog__card-pic">
-							<img src="./img/5t.jpg" alt="Услуги фотографа" class="catalog__card-mini">
-							<a href="#!" class="halls__card-link"></a>
-						</div>
-						<h3 class="catalog__card-title">
-							Смартфон Realme 8i 4/128 Gb фиолетовый
-						</h3>
-						<p class="catalog__card-desc">
-							14490,00  руб.
-						</p>
-						<button type="submit" class="search-form__submit2">Купить</button>	
-					</div>
-					<div class="catalog__card">
-						<div class="catalog__card-pic">
-							<img src="./img/6t.jpg" alt="Мероприятия" class="catalog__card-mini">
-							<a href="#!" class="halls__card-link"></a>
-						</div>
-						<h3 class="catalog__card-title">
-							Смартфон Xiaomi Redmi 9C 3/64GB NFC Gray (Серый)
-						</h3>
-						<p class="catalog__card-desc">
-							7990,00  руб.
-						</p>
-						<button type="submit" class="search-form__submit2">Купить</button>	
+						<button type="submit" class="search-form__submit2">Купить</button>
 					</div>
 				</div>
 			</div>
@@ -248,12 +181,12 @@
 		</section>
 		<!-- Halls end (Залы) -->
 
-		<!-- Reviews start (Отзывы) -->		
+		<!-- Reviews start (Отзывы) -->
 		<section class="reviews" id="s4">
 			<div class="wrapper">
 				<h1 class="all__title all__title-padding-bottom">
 					Отзывы о магазине ЮМИ
-				</h1>				
+				</h1>
 				<div class="slider-container">
 					<div class="reviews__menu">
 						<label for="slide-dot-1"></label>
@@ -273,11 +206,11 @@
 						<input id="slide-dot-5" type="radio" name="slides">
 						<div class="slide slide-5"></div>
 				</div>
-			</div>		
-		</section>		
+			</div>
+		</section>
 		<!-- Reviews end (Отзывы)  -->
 
-		<h1 class="all__title all__title-padding-bottom">Где мы находимся</h1>	
+		<h1 class="all__title all__title-padding-bottom">Где мы находимся</h1>
 		<!-- Map start (Карта) -->
 		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2289.045629561506!2d73.30184821602394!3d54.98983395804156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x43ab01a340f00655%3A0xf1f3e057217bf7dd!2z0YPQuy4g0KHRgtC10L_QsNC90YbQsCwgMiwg0J7QvNGB0LosINCe0LzRgdC60LDRjyDQvtCx0LsuLCA2NDQxMTI!5e0!3m2!1sru!2sru!4v1671357783123!5m2!1sru!2sru" width="1920" height="608" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> >
 
@@ -286,23 +219,23 @@
 			<div class="wrapper-full section-color">
 				<div class="wrapper">
 					<div class="footer__capshion">
-						<nav class="header__nav">					
+						<nav class="header__nav">
 							<ul class="header__list">
 								<li class="footer__item">
 									<a href="#!" class="header__link">Остались вопросы? Мы готовы помочь!</a>
-								</li>					
+								</li>
 								<li class="footer__item">
 									<a href="#!" class="header__link">Служба поддержки</a>
-								</li>					
+								</li>
 								<li class="footer__item">
 									<a href="#!" class="header__link">Политика конфиденциальности</a>
-								</li>				
+								</li>
 							</ul>
 							<ul >
 								<li class="header__item">
 									<a href="#!" class="header__link">©ЮМИ | Магазин умной техники в Омске </a>
-								</li>	
-							</ul>						
+								</li>
+							</ul>
 						</nav>
 					</div>
 				</div>
