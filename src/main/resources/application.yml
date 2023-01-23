@@ -1,1 +1,9 @@
 debug: true
+
+spring:
+  web:
+    resources:
+      static-locations: 'classpath:/webapp'
+  thymeleaf:
+    prefix: 'classpath:/webapp/'
+    suffix: '.html'
