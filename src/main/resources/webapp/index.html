@@ -20,10 +20,10 @@
 					<nav class="header__nav">
 						<ul class="header__list">
 							<li class="header__item">
-								<a href="shipping_payment.html" class="header__link">О компании</a>
+								<a href="about.html" class="header__link">О компании</a>
 							</li>
 							<li class="header__item">
-								<a href="guarantee.html" class="header__link">Услуги</a>
+								<a href="services.html" class="header__link">Услуги</a>
 							</li>
 							<li class="header__item">
 								<a href="contacts.html" class="header__link">Контакты</a>
@@ -53,22 +53,28 @@
 		<!-- Intro start (Вступление)-->
 		<section class="intro1" id="sign-in">
 			<div class="wrapper">
-				<h1 class="intro__title">
+				<div class="animated fadeInRight">
+					<h1 class="intro__title">
 						ГРУЗОВЫЕ ПЕРЕВОЗКИ
-				</h1>
-				<p class="intro__subtitle wrapper">
-					Перевозка малогбаритных и крупногабаритных грузов по России. Полное экспедирование, страхование, упаковка и хранение грузов.
-				</p>
+					</h1>
+					<p class="intro__subtitle wrapper">
+						Перевозка малогбаритных и крупногабаритных грузов по России. Полное экспедирование, страхование, упаковка и хранение грузов.
+					</p>
+				</div>
 				<form class="search-form">
 					<fieldset class="serach-form__wrap">
 						<p class="search-form__info">
 							<span class="search-form__field">
-								<select name="user_profile_color_1">
+								<label for="from">Откуда?</label>
+								<br>
+								<select id="from" name="user_profile_color_1">
 									<option th:each="city : ${cities}" th:text="${city.name}" th:value="${city.id}" >Откуда?</option>
 								</select>
 							</span>
 							<span class="search-form__field">
-								<select name="user_profile_color_1">
+								<label for="do">Куда?</label>
+								<br>
+								<select id="do" name="user_profile_color_1">
 									<option th:each="city : ${cities}" th:text="${city.name}" th:value="${city.id}" >Куда?</option>
 								</select>
 							</span>							
@@ -81,7 +87,7 @@
 		</section>
 		<!-- Intro end (Вступление) -->
 
-				<!-- Rules start (Правила) -->
+		<!-- Rules start (Правила) -->
 		<section class="rules">
 			<div class="wrapper">
 				<h1 class="intro__title  grey top">
@@ -192,7 +198,7 @@
 					<div class="sestim-donials">
 						<h1 class="all__title">Отзывы о сервисе Fast Box</h1>
 					<div class="sectionesag"></div>
-					<div class="sagestim-lonials animated fadeInRight">
+					<div class="sagestim-lonials">
 						<div class="vemotau-vokusipol">
 							<div class="testimonial">
 								<img src="http://zornet.ru/_fr/83/7890600.jpg" alt="Попов">
