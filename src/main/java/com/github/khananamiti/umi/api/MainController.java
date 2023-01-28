@@ -1,6 +1,7 @@
 package com.github.khananamiti.umi.api;
 
 import com.github.khananamiti.umi.api.dto.AuthRequest;
+import com.github.khananamiti.umi.service.CityService;
 import com.github.khananamiti.umi.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -11,10 +12,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 @RequiredArgsConstructor
 public class MainController {
     private final ProductService productService;
+    private final CityService cityService;
 
     @GetMapping("/")
     public String main(Model model) {
         model.addAttribute("productGroups", productService.productGroups());
+        model.addAttribute("cities", cityService.allCities());
         return "index";
     }
 

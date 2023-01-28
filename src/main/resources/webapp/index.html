@@ -64,22 +64,12 @@
 						<p class="search-form__info">
 							<span class="search-form__field">
 								<select name="user_profile_color_1">
-									<option value="0">Откуда?</option>
-									<option value="1">Омск</option>
-									<option value="2">Москва</option>
-									<option value="3">Санкт-Петербург</option>
-									<option value="4">Сочи</option>
-									<option value="5">Казань</option>
+									<option th:each="city : ${cities}" th:text="${city.name}" th:value="${city.id}" >Откуда?</option>
 								</select>
 							</span>
 							<span class="search-form__field">
 								<select name="user_profile_color_1">
-									<option value="0">Куда?</option>
-									<option value="1">Омск</option>
-									<option value="2">Москва</option>
-									<option value="3">Санкт-Петербург</option>
-									<option value="4">Сочи</option>
-									<option value="5">Казань</option>
+									<option th:each="city : ${cities}" th:text="${city.name}" th:value="${city.id}" >Куда?</option>
 								</select>
 							</span>							
 							<input type="text" name="user-like-to-do" class="search-form__field" placeholder="Цена">
