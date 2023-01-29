@@ -31,10 +31,14 @@ public class MainController {
         return "redirect:/";
     }
 
-    @GetMapping("/authorization")
-    public String authorization(Model model) {
-        model.addAttribute("authRequest", new AuthRequest());
-        return "authorization";
+    @GetMapping("/about")
+    public String about() {
+        return "about";
+    }
+
+    @GetMapping("/services")
+    public String guarantee() {
+        return "services";
     }
 
     @GetMapping("/contacts")
@@ -42,18 +46,14 @@ public class MainController {
         return "contacts";
     }
 
-    @GetMapping("/guarantee")
-    public String guarantee() {
-        return "guarantee";
+    @GetMapping("/authorization")
+    public String authorization(Model model) {
+        model.addAttribute("authRequest", new AuthRequest());
+        return "authorization";
     }
 
     @GetMapping("/registration")
     public String registration() {
         return "registration";
-    }
-
-    @GetMapping("/shipping_payment")
-    public String shippingAndPayment() {
-        return "shipping_payment";
     }
 }
