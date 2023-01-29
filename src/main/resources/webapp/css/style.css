@@ -558,8 +558,8 @@ body{
     width: 200px;
     background-size: 20px;
     border: 0;
-    border-bottom: 2px solid #BFC0C5;
-    margin-right: 60px;
+    border-bottom: 2px solid #3CBD96;
+    margin-right: 20px;
     padding-left: 43px;
     padding-bottom: 22px;
     font-weight: 500;
@@ -598,13 +598,15 @@ body{
 }
 
 .search-form__submit {
-    padding: 15px 39px;
+    width: 180px;
+    padding: 10px 15px;
     text-transform: uppercase;
     font-weight: 500;
-    font-size: 24px;
+    font-size: 20px;
     color: white;
     background: #3CBD96;
     border: 0;
+    margin-right: 20px;
 }
 
 .search-form__submit:hover,
@@ -681,7 +683,7 @@ body{
 }
 
 .catalog__wrap{
-    height: 1050px;
+    height: 1000px;
     max-width: 1180px;
     margin: 0 auto;
 }
@@ -720,8 +722,7 @@ body{
 }
 
 .catalog__card-mini{
-    border-radius: 8px;
-    height: 300px;
+    width: 350px;
 }
 
 .catalog__card-title{
@@ -838,7 +839,15 @@ body{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 98px;
-    margin-bottom: 100px;
+    margin-bottom: 40px;
+}
+
+.rules__cards2{
+    padding-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 40px;
+    margin-bottom: 80px;
 }
 
 .rules__card{

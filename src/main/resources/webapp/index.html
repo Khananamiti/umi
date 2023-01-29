@@ -62,24 +62,29 @@
 					</p>
 				</div>
 				<form class="search-form">
-					<fieldset class="serach-form__wrap">
+					<fieldset class="search-form__wrap">
 						<p class="search-form__info">
+
 							<span class="search-form__field">
 								<label for="from">Откуда?</label>
 								<br>
 								<select id="from" name="user_profile_color_1">
-									<option th:each="city : ${cities}" th:text="${city.name}" th:value="${city.id}" >Откуда?</option>
+									<option th:each="city : ${cities}" th:text="${city.name}" th:value="${city.id}">Откуда?</option>
 								</select>
 							</span>
+
 							<span class="search-form__field">
 								<label for="do">Куда?</label>
 								<br>
 								<select id="do" name="user_profile_color_1">
-									<option th:each="city : ${cities}" th:text="${city.name}" th:value="${city.id}" >Куда?</option>
+									<option th:each="city : ${cities}" th:text="${city.name}" th:value="${city.id}">Куда?</option>
 								</select>
-							</span>							
-							<input type="text" name="user-like-to-do" class="search-form__field" placeholder="Цена">
+							</span>
+
 							<button type="submit" class="search-form__submit">Рассчитать</button>
+							<span type="text" name="user-like-to-do" class="search-form__field" placeholder="Цена">Цена</span>
+							<input type="reset" class="search-form__submit" value="Очистить">
+
 						</p>
 					</fieldset>
 				</form>
@@ -131,7 +136,7 @@
 		<!-- Rules end (Правила) -->
 
 		<!--  Catalog start (Каталог товаров)-->
-		<section class="catalog" id="s5">
+		<section class="catalog top" id="s5">
 			<div class="catalog__wrap">
 				<div th:each="productGroup: ${productGroups}" class="catalog__cards">
 					<div th:each="product: ${productGroup}" th:attr="data-id=${product.id}" class="catalog__card">
@@ -145,7 +150,7 @@
 						<p class="catalog__card-desc" th:text="${product.price} + ' руб.'">
 							0 руб.
 						</p>
-						<button type="submit" class="search-form__submit2">Купить</button>
+						<button type="submit" class="search-form__submit2">Заказать</button>
 					</div>
 				</div>
 			</div>
@@ -177,7 +182,7 @@
                           Перевозка крупногабаритных и нестандартных грузов в Санкт-Петербурге
                         </h3>
                         <p class="tour__desc">
-                            Сегодня перевозка крупногабаритных грузов по Санкт-Петербургу и области становится все более актуальной. Но кому ее доверить? Поручите эту работу нашей команде. В «ГрузовичкоФ» опытные сотрудники, широкий выбор техники разной грузоподъемности и квалифицированный сервис при каждом обращении. Комплексный подход к решению поставленной задачи мы дополняем демократичными ценами на услуги, а вызвать технику с грузчиками вы можете в любое время суток.
+                            Сегодня перевозка крупногабаритных грузов по Санкт-Петербургу и области становится все более актуальной. Но кому ее доверить? Поручите эту работу нашей команде. В «Fast Box» опытные сотрудники, широкий выбор техники разной грузоподъемности и квалифицированный сервис при каждом обращении. Комплексный подход к решению поставленной задачи мы дополняем демократичными ценами на услуги, а вызвать технику с грузчиками вы можете в любое время суток.
                         </p>
                     </div>
                     <div class="tour__pic tour__pic_mob-first">
@@ -189,6 +194,59 @@
         </div>
 
         <!-- Tours start -->
+
+		<!-- Benefits start (Преимущества) -->
+		<section class="rules">
+			<div class="wrapper">
+				<h1 class="intro__title  grey">
+					И еще о наших преимуществах
+				</h1>
+				<div class="rules__cards2">
+
+					<div class="rules__card">
+						<img src="./img/svg/1benefits.svg" alt="1benefits">
+						<h3 class="rules__card-circle-title">
+							Подадим машину быстро
+						</h3>
+						<p class="rules__card-circle-desc">
+							Машина приедет в течение 9 минут после вызова
+						</p>
+					</div>
+
+					<div class="rules__card">
+						<img src="./img/svg/2benefits.svg" alt="2benefits">
+						<h3 class="rules__card-circle-title">
+							Уговор дороже денег
+						</h3>
+						<p class="rules__card-circle-desc">
+							Цена известна сразу и не изменится во время выполнения заказа
+						</p>
+					</div>
+
+					<div class="rules__card">
+						<img src="./img/svg/3benefits.svg" alt="3benefits">
+						<h3 class="rules__card-circle-title">
+							Без выходных и без обедов
+						</h3>
+						<p class="rules__card-circle-desc">
+							Переезжайте когда удобно — даже ночью или в праздники
+						</p>
+					</div>
+
+					<div class="rules__card">
+						<img src="./img/svg/4benefits.svg" height="260px" alt="4benefits">
+						<h3 class="rules__card-circle-title">
+							Страхование груза
+						</h3>
+						<p class="rules__card-circle-desc">
+							Покроем ВСЕ риски, связанные с доставкой груза в Вашу пользу
+						</p>
+					</div>
+
+				</div>
+			</div>
+		</section>
+		<!-- Benefits end (Преимущества) -->
 
 		<!-- Reviews start (Отзывы) -->
 		<section class="reviews" id="s4">
@@ -243,7 +301,7 @@
 									<i class="far fa-star"></i>
 								</div>
 
-								<p>Не смотря на то, что мне не смогли помочь с перевозкой, ваша организация единственная, которая быстро перезвонила. Подбирали варианты и очень приемлимые цены по сравнению с другими компаниями. Буду вас рекомендовать. Спасибо большое!
+								<p>Не смотря на то, что мне не смогли помочь с перевозкой, ваша организация единственная, которая быстро перезвонила. Подбирали варианты и очень приемлемые цены по сравнению с другими компаниями. Буду вас рекомендовать. Спасибо большое!
 								</p>
 						</div>
 					</div>
