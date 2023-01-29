@@ -1,6 +1,7 @@
 package com.github.khananamiti.umi.api;
 
 import com.github.khananamiti.umi.api.dto.AuthRequest;
+import com.github.khananamiti.umi.api.dto.ResolvePriceRequest;
 import com.github.khananamiti.umi.service.CityService;
 import com.github.khananamiti.umi.service.ProductService;
 import lombok.RequiredArgsConstructor;
@@ -18,6 +19,10 @@ public class MainController {
     public String main(Model model) {
         model.addAttribute("productGroups", productService.productGroups());
         model.addAttribute("cities", cityService.allCities());
+        final String resolvePriceRequestAttribute = "resolvePriceRequest";
+        if (model.getAttribute(resolvePriceRequestAttribute) == null) {
+            model.addAttribute("resolvePriceRequest", new ResolvePriceRequest());
+        }
         return "index";
     }
 

@@ -61,29 +61,28 @@
 						Перевозка малогбаритных и крупногабаритных грузов по России. Полное экспедирование, страхование, упаковка и хранение грузов.
 					</p>
 				</div>
-				<form class="search-form">
+				<form class="search-form" th:action="@{/resolvePrice}" th:object="${resolvePriceRequest}" th:method="POST">
 					<fieldset class="search-form__wrap">
 						<p class="search-form__info">
 
 							<span class="search-form__field">
 								<label for="from">Откуда?</label>
 								<br>
-								<select id="from" name="user_profile_color_1">
-									<option th:each="city : ${cities}" th:text="${city.name}" th:value="${city.id}">Откуда?</option>
+								<select id="from" name="user_profile_color_1" th:field="*{from}">
+									<option th:each="city : ${cities}" th:text="${city.name}" th:value="${city.id}" th:selected="${city.id == resolvePriceRequest.from}">Откуда?</option>
 								</select>
 							</span>
 
 							<span class="search-form__field">
 								<label for="do">Куда?</label>
 								<br>
-								<select id="do" name="user_profile_color_1">
-									<option th:each="city : ${cities}" th:text="${city.name}" th:value="${city.id}">Куда?</option>
+								<select id="do" name="user_profile_color_1" th:field="*{to}">
+									<option th:each="city : ${cities}" th:text="${city.name}" th:value="${city.id}" th:selected="${city.id == resolvePriceRequest.to}">Куда?</option>
 								</select>
 							</span>
 
 							<button type="submit" class="search-form__submit">Рассчитать</button>
-							<span type="text" name="user-like-to-do" class="search-form__field" placeholder="Цена">Цена</span>
-							<input type="reset" class="search-form__submit" value="Очистить">
+							<span type="text" name="user-like-to-do" class="search-form__field" placeholder="Цена" th:if="${price != null}" th:text="${'Цена: ' + price + ' руб.'}">Цена</span>
 
 						</p>
 					</fieldset>

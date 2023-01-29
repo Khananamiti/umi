@@ -1,18 +1,23 @@
 package com.github.khananamiti.umi.config;
 
 import com.github.khananamiti.umi.dao.CityDao;
+import com.github.khananamiti.umi.dao.PriceDao;
 import com.github.khananamiti.umi.dao.ProductDao;
 import com.github.khananamiti.umi.dao.UserDao;
 import com.github.khananamiti.umi.dao.impl.CityDaoImpl;
+import com.github.khananamiti.umi.dao.impl.PriceDaoImpl;
 import com.github.khananamiti.umi.dao.impl.ProductDaoImpl;
 import com.github.khananamiti.umi.dao.impl.UserDaoImpl;
 import com.github.khananamiti.umi.dao.sqlite.CityDaoSqliteImpl;
+import com.github.khananamiti.umi.dao.sqlite.PriceDaoSqliteImpl;
 import com.github.khananamiti.umi.dao.sqlite.ProductDaoSqliteImpl;
 import com.github.khananamiti.umi.dao.sqlite.UserDaoSqliteImpl;
 import com.github.khananamiti.umi.service.CityService;
+import com.github.khananamiti.umi.service.PriceService;
 import com.github.khananamiti.umi.service.ProductService;
 import com.github.khananamiti.umi.service.UserService;
 import com.github.khananamiti.umi.service.impl.CityServiceImpl;
+import com.github.khananamiti.umi.service.impl.PriceServiceImpl;
 import com.github.khananamiti.umi.service.impl.ProductServiceImpl;
 import com.github.khananamiti.umi.service.impl.UserServiceImpl;
 import com.github.khananamiti.umi.service.mapper.CityDtoMapper;
@@ -63,5 +68,15 @@ public class UmiApplicationConfig {
     @Bean
     public CityDtoMapper cityDtoMapper() {
         return Mappers.getMapper(CityDtoMapper.class);
+    }
+
+    @Bean
+    public PriceService priceService(PriceDao priceDao) {
+        return new PriceServiceImpl(priceDao);
+    }
+
+    @Bean
+    public PriceDao priceDao(JdbcTemplate jdbcTemplate) {
+        return new PriceDaoSqliteImpl(new PriceDaoImpl(jdbcTemplate));
     }
 }
